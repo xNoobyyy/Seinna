@@ -1,0 +1,5 @@
+name: "Seinna"
+version: "0.1-ALPHA"
+main: de.leander.seinna.Main
+description: "Main plugin for the Seinna server"
+api-version: "1.21.4"
