@@ -10,10 +10,15 @@ class KinematicChain(
 ) {
 
     fun fabrik(target: Vector) {
+        for (i in 0 until MAX_INTERACTIONS) {
+            fabrikForward(target)
+            fabrikBackward()
 
+            if (segments.last().position.distanceSquared(target) < TOLERANCE) break
+        }
     }
 
-    fun fabrikForward(target: Vector) {
+    private fun fabrikForward(target: Vector) {
         val lastSegment = segments.last()
         lastSegment.position.copy(target)
 
